@@ -1,159 +1,76 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Legal Roadmap | LegalEase AI</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-slate-50 min-h-screen">
-
-
-
-    <nav class="flex justify-between items-center px-10 py-4 bg-white border-b border-slate-100 shadow-sm sticky top-0 z-50">
-
-        <h1 class="text-2xl font-bold text-blue-700 cursor-pointer" onclick="window.location.href='index.html'">LegalEase AI</h1>
-
-        <button class="text-sm font-semibold text-slate-600 border border-slate-300 px-4 py-2 rounded-lg hover:bg-slate-50" onclick="window.location.href='index.html'">
-
-            ← Back to Input
-
-        </button>
-
-        <div class="flex items-center gap-8">
-
-            <div class="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center bg-slate-50">👤</div>
-
-        </div>
-
-
-
+<body>
+    <nav class="navbar">
+        <h1 class="logo" onclick="window.location.href='index.html'">LegalEase AI</h1>
+        <button class="btn-back" onclick="window.location.href='index.html'">← Back to Input</button>
+        <div class="profile-icon">👤</div>
     </nav>
 
-
-
-    <main class="max-w-6xl mx-auto px-6 py-12">
-
-        <header class="text-center mb-16">
-
-            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider">Analysis Result</span>
-
-            <h2 id="page-title" class="text-4xl font-extrabold text-slate-900 mt-4 italic">Your Legal Roadmap</h2>
-
-            <p class="text-slate-500 mt-2">Based on your scenario, here are the standard procedures to follow.</p>
-
+    <main class="container">
+        <header class="hero-section">
+            <span class="chip">Analysis Result</span>
+            <h2 id="page-title">Your Legal Roadmap</h2>
+            <p>Based on your scenario, here are the standard procedures to follow.</p>
         </header>
 
-
-
-        <div class="procedure-list space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-200">
-
-           
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-600 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold">1</div>
-
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-
-                    <h4 class="font-bold text-slate-900">Immediate Action</h4>
-
-                    <p id="step-1" class="text-sm text-slate-600 mt-2">Waiting for analysis...</p>
-
+        <div class="zigzag-timeline">
+            <div class="timeline-item left">
+                <div class="timeline-dot">1</div>
+                <div class="timeline-content">
+                    <h4>Immediate Action</h4>
+                    <p id="step-1">Waiting for analysis...</p>
                 </div>
-
             </div>
 
-
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold">2</div>
-
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-
-                    <h4 class="font-bold text-slate-900">Evidence Collection</h4>
-
-                    <p id="step-2" class="text-sm text-slate-600 mt-2">Waiting for analysis...</p>
-
+            <div class="timeline-item right">
+                <div class="timeline-dot">2</div>
+                <div class="timeline-content">
+                    <h4>Evidence Collection</h4>
+                    <p id="step-2">Waiting for analysis...</p>
                 </div>
-
             </div>
 
-
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-400 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold">3</div>
-
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-
-                    <h4 class="font-bold text-slate-900">Formal Notification</h4>
-
-                    <p id="step-3" class="text-sm text-slate-600 mt-2">Waiting for analysis...</p>
-
+            <div class="timeline-item left">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-content">
+                    <h4>Formal Notification</h4>
+                    <p id="step-3">Waiting for analysis...</p>
                 </div>
-
             </div>
 
-
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-indigo-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold">4</div>
-
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-
-                    <h4 class="font-bold text-slate-900">Mediation</h4>
-
-                    <p id="step-4" class="text-sm text-slate-600 mt-2">Waiting for analysis...</p>
-
+            <div class="timeline-item right">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-content">
+                    <h4>Mediation</h4>
+                    <p id="step-4">Waiting for analysis...</p>
                 </div>
-
             </div>
 
-
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-800 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold">5</div>
-
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-
-                    <h4 class="font-bold text-slate-900">Final Escalation</h4>
-
-                    <p id="step-5" class="text-sm text-slate-600 mt-2">Waiting for analysis...</p>
-
+            <div class="timeline-item left">
+                <div class="timeline-dot">5</div>
+                <div class="timeline-content">
+                    <h4>Final Escalation</h4>
+                    <p id="step-5">Waiting for analysis...</p>
                 </div>
-
             </div>
-
         </div>
 
-
-
-        <div class="mt-20 p-10 bg-[#0f172a] rounded-3xl text-white text-center shadow-2xl">
-
-            <h3 class="text-2xl font-bold">Ready to take the next step?</h3>
-
-            <button class="mt-6 bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition">Get a Lawyer</button>
-
+        <div class="cta-card">
+            <h3>Ready to take the next step?</h3>
+            <button class="btn-primary">Get a Lawyer</button>
         </div>
-
     </main>
 
-
-
     <script src="script.js"></script>
-
 </body>
 
 </html>
