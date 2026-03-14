@@ -1,4 +1,4 @@
-// --- PAGE 1: INPUT LOGIC ---
+
 function fill(text) {
     const box = document.getElementById('scenario');
     if (box) { box.value = `I'm dealing with an issue regarding ${text.toLowerCase()}: `; }
