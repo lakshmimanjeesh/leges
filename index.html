@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalEase AI | Scenario Input</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+
+    <nav class="navbar">
+        <h1 class="logo">LegalEase AI</h1>
+        <div class="nav-links">
+            <button class="nav-btn-alt">Ask a Lawyer</button>
+            <button class="nav-btn-primary">Lawyer Login</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="header">
+            <h2>What happened?</h2>
+            <p>Explain your situation and understand your legal rights instantly.</p>
+        </header>
+
+        <section class="input-card">
+            <label for="scenario" class="input-label">Your Case Scenario</label>
+            <textarea id="scenario" rows="6" placeholder="Describe your legal issue in detail..."></textarea>
+            
+            <div class="meta-info">
+                <span>Press Ctrl + Enter to analyze</span>
+                <span id="char-count">0 characters</span>
+            </div>
+
+            <div class="suggestions">
+                <button onclick="fillSuggestion('Online fraud')">Online fraud</button>
+                <button onclick="fillSuggestion('Landlord dispute')">Landlord dispute</button>
+                <button onclick="fillSuggestion('Salary not paid')">Salary not paid</button>
+            </div>
+
+            <div class="actions">
+                <button id="analyze-btn" class="main-btn" onclick="startAnalysis()">
+                    <span id="btn-text">Analyze Situation</span>
+                    <div id="spinner" class="loader hidden"></div>
+                </button>
+                <button class="clear-btn" onclick="clearAll()">Clear</button>
+            </div>
+        </section>
+
+        <div id="response-box" class="response-card hidden">
+            <h3>⚖️ AI Legal Analysis</h3>
+            <p id="response-text">Processing your request...</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>DISCLAIMER: This platform provides legal information only and is not a substitute for professional legal advice.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
