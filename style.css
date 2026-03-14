@@ -109,3 +109,102 @@ body { font-family: 'Inter', sans-serif; background: #f8fafc; margin: 0; color: 
 .btn-back:hover {
     background: #e2e8f0;
 }
+/* Auth Page Specifics */
+.auth-page {
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.forgot-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.login-footer a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
