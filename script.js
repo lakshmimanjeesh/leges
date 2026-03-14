@@ -1,76 +1,172 @@
-// --- PAGE 1: INPUT LOGIC ---
-function fill(text) {
-    const box = document.getElementById('scenario');
-    if (box) { box.value = `I'm dealing with an issue regarding ${text.toLowerCase()}: `; }
-}
+/* ================================
+   SAFE ELEMENT SELECTION
+================================ */
 
-function clearText() {
-    const box = document.getElementById('scenario');
-    if (box) { box.value = ''; }
-}
+const scenarioBox = document.getElementById('scenario');
+const charCount = document.getElementById('char-count');
+const grid = document.getElementById("grid");
 
-async function startAnalysis() {
-    const scenarioBox = document.getElementById('scenario');
-    if (!scenarioBox || !scenarioBox.value.trim()) {
-        alert("Please describe your situation first.");
-        return;
-    }
 
-    // Set Default Data
-    let data = {
-        title: "Legal Procedure",
-        s1: "Gather all related evidence including screenshots and receipts.",
-        s2: "Organize files into a chronological folder.",
-        s3: "Draft a formal notice of grievance.",
-        s4: "Attempt a neutral mediation session.",
-        s5: "Consult a lawyer for formal court filing."
-    };
+/* ================================
+   SCENARIO PAGE LOGIC
+================================ */
 
-    const input = scenarioBox.value.toLowerCase();
-    
-    // AI Keyword Logic
-    if (input.includes("fraud")) {
-        data.title = "Fraud Recovery Roadmap";
-        data.s1 = "Immediately freeze your bank accounts and cards.";
-        data.s2 = "Save all transaction IDs and scammer screenshots.";
-        data.s3 = "File a report on the National Cybercrime Portal.";
-        data.s4 = "Send the FIR copy to your bank's Nodal Officer.";
-        data.s5 = "Escalate to the Banking Ombudsman for recovery.";
-    } else if (input.includes("landlord")) {
-        data.title = "Tenant Protection Roadmap";
-        data.s1 = "Review the 'Security Deposit' clause in your lease.";
-        data.s2 = "Take photos of the flat to prove no damages.";
-        data.s3 = "Send a formal notice for refund via Registered Post.";
-        data.s4 = "Seek help from a local Tenant Association.";
-        data.s5 = "Approach the Rent Control Board for a refund order.";
-    }
+if (scenarioBox) {
 
-    // SAVE EVERYTHING
-    localStorage.setItem('title', data.title);
-    localStorage.setItem('s1', data.s1);
-    localStorage.setItem('s2', data.s2);
-    localStorage.setItem('s3', data.s3);
-    localStorage.setItem('s4', data.s4);
-    localStorage.setItem('s5', data.s5);
-
-    // MOVE TO NEXT PAGE
-    window.location.href = 'procedures.html';
-}
-
-// --- PAGE 2: LOAD LOGIC ---
-document.addEventListener('DOMContentLoaded', () => {
-    const titleTag = document.getElementById('page-title');
-    
-    // If we are on the procedures page, fill the text
-    if (titleTag) {
-        const storedTitle = localStorage.getItem('title');
-        if (storedTitle) {
-            titleTag.innerText = storedTitle;
-            document.getElementById('step-1').innerText = localStorage.getItem('s1');
-            document.getElementById('step-2').innerText = localStorage.getItem('s2');
-            document.getElementById('step-3').innerText = localStorage.getItem('s3');
-            document.getElementById('step-4').innerText = localStorage.getItem('s4');
-            document.getElementById('step-5').innerText = localStorage.getItem('s5');
-        }
-    }
+/* Character Counter */
+scenarioBox.addEventListener('input', () => {
+    charCount.innerText = `${scenarioBox.value.length} characters`;
 });
+
+
+/* Suggestion Autofill */
+window.fillSuggestion = function(text) {
+    scenarioBox.value = `Issue regarding ${text.toLowerCase()}: `;
+    charCount.innerText = `${scenarioBox.value.length} characters`;
+    scenarioBox.focus();
+}
+
+
+/* Clear Button */
+window.clearAll = function() {
+    scenarioBox.value = '';
+    charCount.innerText = '0 characters';
+}
+
+
+/* Category Detection */
+function detectCategory(text){
+
+text = text.toLowerCase()
+
+if(text.includes("fraud") || text.includes("hack") || text.includes("online"))
+return "Cybercrime"
+
+if(text.includes("salary") || text.includes("job") || text.includes("termination"))
+return "Employment Law"
+
+if(text.includes("divorce") || text.includes("custody") || text.includes("alimony"))
+return "Divorce Law"
+
+if(text.includes("product") || text.includes("refund") || text.includes("consumer"))
+return "Consumer Law"
+
+if(text.includes("land") || text.includes("rent") || text.includes("property"))
+return "Property Law"
+
+if(text.includes("arrest") || text.includes("police") || text.includes("crime"))
+return "Criminal Law"
+
+return "General Legal"
+}
+
+
+/* Analyze Button */
+window.startAnalysis = function(){
+
+const input = scenarioBox.value.trim()
+
+if(!input){
+alert("Please describe your situation first.")
+return
+}
+
+const btnText = document.getElementById('btn-text')
+const spinner = document.getElementById('spinner')
+
+btnText.innerText = "Analyzing..."
+spinner.classList.remove("hidden")
+
+setTimeout(()=>{
+
+const category = detectCategory(input)
+
+window.location.href =
+"lawyers.html?category=" + encodeURIComponent(category)
+
+},1500)
+
+}
+
+}
+
+
+
+/* ================================
+   LAWYERS PAGE LOGIC
+================================ */
+
+if (grid) {
+
+const params = new URLSearchParams(window.location.search)
+const category = params.get("category")
+
+const badge = document.querySelector(".badge")
+
+if(badge && category){
+badge.innerText = "Category: " + category
+}
+
+fetch("lawyers.json")
+.then(res => res.json())
+.then(data => {
+
+let filtered = data.filter(l =>
+l.field.toLowerCase() === category.toLowerCase()
+)
+
+render(filtered)
+
+})
+
+
+function render(list){
+
+grid.innerHTML = ""
+
+if(list.length === 0){
+grid.innerHTML =
+`<p class="text-center col-span-3 text-gray-400">
+No lawyers found for this case
+</p>`
+return
+}
+
+list.forEach(l=>{
+
+grid.innerHTML += `
+
+<div class="bg-white p-6 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+
+<h2 class="font-bold text-lg">${l.name}</h2>
+
+<p class="text-indigo-600">${l.field}</p>
+
+<p class="text-sm mt-2">Experience: ${l.experience} years</p>
+<p class="text-sm">Successful Cases: ${l.success}</p>
+<p class="text-sm">Total Cases: ${l.total}</p>
+<p class="text-sm">Rating ⭐ ${l.rating}</p>
+<p class="text-sm">City: ${l.city}</p>
+<p class="text-sm">Fee ₹${l.fee}</p>
+
+<div class="bg-green-100 text-green-700 inline-block px-2 py-1 rounded mt-2">
+${l.match}% Match
+</div>
+
+<details class="mt-3">
+<summary class="cursor-pointer text-indigo-600">View Bio</summary>
+<p class="text-sm mt-1">${l.bio}</p>
+</details>
+
+<button class="bg-indigo-600 text-white w-full py-2 rounded mt-4 hover:bg-indigo-700">
+Connect Now
+</button>
+
+</div>
+
+`
+})
+
+}
+
+}
