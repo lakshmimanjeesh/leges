@@ -1,0 +1,281 @@
+[
+{
+"name":"Adv. Rahul Menon",
+"field":"Cybercrime",
+"experience":8,
+"success":120,
+"total":150,
+"rating":4.7,
+"city":"Kochi",
+"fee":1500,
+"status":"Online",
+"match":92,
+"bio":"Expert in cyber fraud, identity theft and online harassment cases."
+},
+
+{
+"name":"Adv. Priya Nair",
+"field":"Consumer Law",
+"experience":5,
+"success":80,
+"total":100,
+"rating":4.4,
+"city":"Calicut",
+"fee":1000,
+"status":"Busy",
+"match":88,
+"bio":"Handles product liability, refund disputes and service complaints."
+},
+
+{
+"name":"Adv. Arjun Pillai",
+"field":"Criminal Law",
+"experience":12,
+"success":210,
+"total":260,
+"rating":4.9,
+"city":"Trivandrum",
+"fee":2200,
+"status":"Online",
+"match":95,
+"bio":"Senior criminal defence lawyer with high success rate."
+},
+
+{
+"name":"Adv. Sneha Thomas",
+"field":"Divorce Law",
+"experience":7,
+"success":95,
+"total":120,
+"rating":4.6,
+"city":"Ernakulam",
+"fee":1600,
+"status":"Online",
+"match":90,
+"bio":"Specialist in mutual divorce, custody and alimony settlements."
+},
+
+{
+"name":"Adv. Vishnu Raj",
+"field":"Employment Law",
+"experience":6,
+"success":70,
+"total":90,
+"rating":4.3,
+"city":"Thrissur",
+"fee":1100,
+"status":"Busy",
+"match":86,
+"bio":"Handles salary disputes, wrongful termination and contracts."
+},
+
+{
+"name":"Adv. Neha Kapoor",
+"field":"Cybercrime",
+"experience":9,
+"success":140,
+"total":170,
+"rating":4.8,
+"city":"Bangalore",
+"fee":1800,
+"status":"Online",
+"match":93,
+"bio":"Expert in data breach and digital evidence litigation."
+},
+
+{
+"name":"Adv. Kiran Das",
+"field":"Property Law",
+"experience":10,
+"success":160,
+"total":200,
+"rating":4.7,
+"city":"Kochi",
+"fee":2000,
+"status":"Online",
+"match":91,
+"bio":"Handles land disputes, registration and ownership conflicts."
+},
+
+{
+"name":"Adv. Anjali Menon",
+"field":"Consumer Law",
+"experience":4,
+"success":50,
+"total":70,
+"rating":4.2,
+"city":"Calicut",
+"fee":900,
+"status":"Busy",
+"match":82,
+"bio":"Focuses on online shopping fraud and defective products."
+},
+
+{
+"name":"Adv. Rohit Sharma",
+"field":"Criminal Law",
+"experience":11,
+"success":180,
+"total":220,
+"rating":4.6,
+"city":"Delhi",
+"fee":2100,
+"status":"Online",
+"match":89,
+"bio":"Specializes in bail applications and trial defence."
+},
+
+{
+"name":"Adv. Meera Iyer",
+"field":"Divorce Law",
+"experience":8,
+"success":110,
+"total":135,
+"rating":4.5,
+"city":"Chennai",
+"fee":1700,
+"status":"Online",
+"match":87,
+"bio":"Experienced in mediation and family settlements."
+},
+
+{
+"name":"Adv. Faisal Khan",
+"field":"Cybercrime",
+"experience":5,
+"success":75,
+"total":95,
+"rating":4.4,
+"city":"Mumbai",
+"fee":1400,
+"status":"Busy",
+"match":84,
+"bio":"Handles phishing scams and online financial fraud."
+},
+
+{
+"name":"Adv. Deepak Verma",
+"field":"Employment Law",
+"experience":9,
+"success":130,
+"total":160,
+"rating":4.6,
+"city":"Hyderabad",
+"fee":1500,
+"status":"Online",
+"match":88,
+"bio":"Corporate employment and workplace harassment specialist."
+},
+
+{
+"name":"Adv. Kavya Nair",
+"field":"Property Law",
+"experience":6,
+"success":85,
+"total":110,
+"rating":4.3,
+"city":"Kottayam",
+"fee":1200,
+"status":"Online",
+"match":83,
+"bio":"Handles tenant agreements and documentation disputes."
+},
+
+{
+"name":"Adv. Amit Gupta",
+"field":"Criminal Law",
+"experience":14,
+"success":250,
+"total":300,
+"rating":4.9,
+"city":"Delhi",
+"fee":2500,
+"status":"Online",
+"match":96,
+"bio":"Senior advocate known for landmark criminal case wins."
+},
+
+{
+"name":"Adv. Riya Sen",
+"field":"Consumer Law",
+"experience":7,
+"success":90,
+"total":115,
+"rating":4.5,
+"city":"Kolkata",
+"fee":1300,
+"status":"Busy",
+"match":85,
+"bio":"Focuses on banking disputes and insurance claims."
+},
+
+{
+"name":"Adv. Harish Kumar",
+"field":"Employment Law",
+"experience":3,
+"success":40,
+"total":60,
+"rating":4.1,
+"city":"Mysore",
+"fee":800,
+"status":"Online",
+"match":80,
+"bio":"Junior advocate handling HR compliance issues."
+},
+
+{
+"name":"Adv. Latha Krishnan",
+"field":"Divorce Law",
+"experience":10,
+"success":140,
+"total":170,
+"rating":4.7,
+"city":"Trivandrum",
+"fee":1900,
+"status":"Online",
+"match":92,
+"bio":"Specializes in contested divorce and domestic violence cases."
+},
+
+{
+"name":"Adv. Sanjay Patel",
+"field":"Property Law",
+"experience":12,
+"success":190,
+"total":230,
+"rating":4.8,
+"city":"Ahmedabad",
+"fee":2100,
+"status":"Busy",
+"match":90,
+"bio":"Expert in commercial property disputes."
+},
+
+{
+"name":"Adv. Noor Ali",
+"field":"Cybercrime",
+"experience":6,
+"success":85,
+"total":110,
+"rating":4.4,
+"city":"Kochi",
+"fee":1350,
+"status":"Online",
+"match":86,
+"bio":"Handles social media abuse and online defamation."
+},
+
+{
+"name":"Adv. Shweta Rao",
+"field":"Consumer Law",
+"experience":8,
+"success":115,
+"total":140,
+"rating":4.6,
+"city":"Pune",
+"fee":1500,
+"status":"Online",
+"match":89,
+"bio":"Experienced in e-commerce disputes and refund claims."
+}
+]
