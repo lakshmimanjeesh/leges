@@ -29,5 +29,5 @@ setTimeout(typeSub,70)
 typeMain()
 
 function enterApp(){
-window.location.href="scenario.html"
+    window.location.href = "login.html";
 }

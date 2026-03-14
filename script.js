@@ -73,4 +73,43 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('step-5').innerText = localStorage.getItem('s5');
         }
     }
+
+    // If we are on the lawyers page, load lawyer cards from the JSON file
+    const grid = document.getElementById('grid');
+    if (grid) {
+        fetch('lawyers.json')
+            .then(res => res.json())
+            .then(lawyers => {
+                grid.innerHTML = lawyers.map(lawyer => {
+                    return `
+                    <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">${lawyer.name}</h3>
+                                <p class="text-sm text-gray-600">${lawyer.field} • ${lawyer.city}</p>
+                            </div>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full ${lawyer.status === 'Online' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}">${lawyer.status}</span>
+                        </div>
+
+                        <p class="text-sm text-gray-700 mb-4">${lawyer.bio}</p>
+
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-600 mb-4">
+                            <span class="inline-flex items-center gap-1"><strong>💼</strong> ${lawyer.experience} yrs</span>
+                            <span class="inline-flex items-center gap-1"><strong>⭐</strong> ${lawyer.rating}</span>
+                            <span class="inline-flex items-center gap-1"><strong>✔</strong> ${lawyer.match}% match</span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold text-gray-900">₹${lawyer.fee}/hr</span>
+                            <button class="btn-primary" onclick="alert('Contact info for ${lawyer.name} will be shared via the platform.')">Contact</button>
+                        </div>
+                    </div>
+                    `;
+                }).join('');
+            })
+            .catch(err => {
+                grid.innerHTML = '<p class="text-red-600">Unable to load lawyer list. Please try again later.</p>';
+                console.error('Failed to load lawyers.json', err);
+            });
+    }
 });
