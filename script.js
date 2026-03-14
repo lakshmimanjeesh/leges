@@ -45,19 +45,19 @@ return "Cybercrime"
 if(text.includes("salary") || text.includes("job") || text.includes("termination"))
 return "Employment Law"
 
-if(text.includes("divorce") || text.includes("custody"))
+if(text.includes("divorce") || text.includes("custody") || text.includes("alimony"))
 return "Divorce Law"
 
-if(text.includes("product") || text.includes("refund"))
+if(text.includes("product") || text.includes("refund") || text.includes("consumer"))
 return "Consumer Law"
 
 if(text.includes("land") || text.includes("rent") || text.includes("property"))
 return "Property Law"
 
-if(text.includes("police") || text.includes("arrest") || text.includes("crime"))
+if(text.includes("arrest") || text.includes("police") || text.includes("crime"))
 return "Criminal Law"
 
-return "Cybercrime"
+return "General Legal"
 }
 
 
